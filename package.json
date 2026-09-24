@@ -1,0 +1,17 @@
+{
+  "name": "wcag-checker",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.27.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build && vite build --config vite.content.config.ts",
+    "check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/contrast/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}

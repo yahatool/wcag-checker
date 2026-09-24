@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "WCAG Checker",
+  "description": "DevTools-based accessibility development aid",
+  "version": "0.1.0",
+  "devtools_page": "devtools.html",
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["scripting"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"]
+}

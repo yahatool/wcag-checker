@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>WCAG Checker contrast fixture</title>
+  <style>
+    body { background: #fff; color: #111; font: 16px/1.5 system-ui, sans-serif; max-width: 44rem; margin: 2rem auto; }
+    .below-aa { color: #777; }
+    .above-aa { color: #767676; }
+    .large-below-aa { color: #999; font-size: 24px; }
+    .aaa-only { color: #666; }
+    .transparent-parent { background: rgba(0, 0, 0, .2); padding: 1rem; }
+    .transparent-parent span { color: #777; }
+    .image-background { background: linear-gradient(90deg, white, #ccc); color: #777; padding: 1rem; }
+    .original-inline { color: #777 !important; }
+  </style>
+</head>
+<body>
+  <h1>コントラスト検査用ページ</h1>
+  <p class="below-aa">AA 未満：通常文字 #777 / 白</p>
+  <p class="above-aa">AA 以上：通常文字 #767676 / 白</p>
+  <p class="large-below-aa">AA 未満：大きな文字 #999 / 白</p>
+  <p class="aaa-only">AA 合格・AAA 未満：通常文字 #666 / 白</p>
+  <div class="transparent-parent"><span>半透明背景の文字</span></div>
+  <p class="image-background">背景画像のため未判定</p>
+  <p id="inline" style="color: rgb(119, 119, 119) !important">inline の値と !important を復元</p>
+  <button id="add" type="button">テキストを追加</button>
+  <div id="dynamic"></div>
+  <script>
+    document.getElementById('add').addEventListener('click', () => {
+      const item = document.createElement('p');
+      item.className = 'below-aa';
+      item.textContent = '動的に追加された低コントラスト文字';
+      document.getElementById('dynamic').append(item);
+    });
+  </script>
+</body>
+</html>
